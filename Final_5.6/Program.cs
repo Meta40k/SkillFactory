@@ -17,39 +17,41 @@ internal class Program
              string[] Pets,
              string[] FavoriteColor) result;
 
-            Console.WriteLine("Введите имя");
+            Console.WriteLine("Заполняем имя");
             result.Name = GetAndCheckString();
-            Console.WriteLine("Введите Фамилию");
+            Console.WriteLine("Заполняем Фамилию");
             result.LastName = GetAndCheckString();
             Console.WriteLine("Лет тебе сколько?");
             result.Age = GetAndCheckNumber();
             Console.WriteLine("Питомцы имеются?");
-            result.Pets = GetAndCreateArrayPets();
-            Console.WriteLine("Любимые цвета есть?");
-            result.FavoriteColor = GetAndCreateArrayPets();
+            result.Pets = GetAndCreateArray();
+            Console.WriteLine("Заполняем любимые цвета. Они вообще есть у тебя??");
+            result.FavoriteColor = GetAndCreateArray();
 
             return result;
         }
                
-        void OutputOnDisplay(string Name, string LastName, int Age, string[] Pets, string[] FavoriteColor)
+        void OutputOnDisplay((string Name, string LastName, int Age, string[] Pets, string[] FavoriteColor) item)
         {
-            Console.WriteLine($"Имя - {Name}");
-            Console.WriteLine($"{Age} от отраду");
-            if (Pets.Length > 0)
+            Console.WriteLine("=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=");
+            Console.WriteLine($"Звать - {item.Name} {item.LastName}");
+            Console.WriteLine($"{item.Age} лет от отраду");
+            Console.WriteLine("Список питомцев");
+            if (item.Pets.Length > 0)
             {
-                PrintArray(Pets);
+                PrintArray(item.Pets);
             }
             else 
             {
-                Console.WriteLine("характер скверный, не женат");
+                Console.WriteLine("Питомцев нет");
             }
-            if (FavoriteColor.Length > 0)
+            if (item.FavoriteColor.Length > 0)
             {
-                PrintArray(FavoriteColor);
+                PrintArray(item.FavoriteColor);
             }
             else
             {
-                Console.WriteLine("характер скверный, не женат");
+                Console.WriteLine("Любимые цвета отсутствуют");
             }
         }
 
@@ -61,16 +63,14 @@ internal class Program
             }
         }
 
-        string[] GetAndCreateArrayPets()
+        string[] GetAndCreateArray()
         {
-            Console.WriteLine("начало метода GetAndCreateArrayPets, у вас есть животные/цвета?");
             string answer = Console.ReadLine();
             if (ParseToBoolean(answer))
             {
                 Console.WriteLine("и сколько же?");
                 int quantity = GetAndCheckNumber();
                 string[] result = CreateArray(quantity);
-                Console.WriteLine($"По очереди введите, все {quantity} значений!");
                 for (int i = 0; i == result.Length; i++)
                 {
                     Console.WriteLine($"Живность/цветъ № {i}");
@@ -78,7 +78,7 @@ internal class Program
                 }
                 return result;
             }
-            Console.WriteLine("Женщины — удивительные создания. Они готовы отдать всю свою любовь собаке, а не человеку. Странные все же они — любительницы животных.");
+            Console.WriteLine("Запомним, что у тебя их нет");
             return new string[0];
         }
 
@@ -88,7 +88,7 @@ internal class Program
 
             for (int i = 0; i < result.Length; i++)
             {
-                Console.WriteLine($"Введите имя для {i + 1}-го питомца");
+                Console.WriteLine($"Заполните значение {i + 1}-го");
                 result[i] = Console.ReadLine();
             }
 
@@ -127,15 +127,16 @@ internal class Program
             string result;
             do
             {
-                Console.WriteLine("Введите строку");
+                Console.WriteLine("Введите строку:");
                 result = Console.ReadLine();
             }
-            while (!string.IsNullOrEmpty(result) || string.IsNullOrWhiteSpace(result));
+            while (string.IsNullOrEmpty(result) || string.IsNullOrWhiteSpace(result));
             return result;
         }
 
-        (string, string, int, string[], string[]) test = GetData();
 
-        OutputOnDisplay(test);
+        OutputOnDisplay(GetData());
+
+        
     }
 }
