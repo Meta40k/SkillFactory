@@ -100,7 +100,6 @@ internal class Program
             bool result = false;
             foreach(string item in answers)
             {
-                //result = answer == item ? true : false;   
                 if (answer.Contains(item))
                 {
                     result = true;
