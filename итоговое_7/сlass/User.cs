@@ -14,7 +14,10 @@
             } 
             private set 
             {
-                _age = value; 
+                if(value > 16)
+                {
+                    _age = value;
+                } 
             } 
         }
 
