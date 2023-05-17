@@ -2,7 +2,14 @@
 {
     abstract class User
     {
-        public abstract Guid ID { get; }
-        public abstract string Name { get; }
+        public readonly Guid ID;
+        public string Name { get; private set; }
+
+
+
+        protected void ChangeName(string newName)
+        {
+            Name = newName;
+        }
     }
 }
