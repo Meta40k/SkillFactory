@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<project sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -8,4 +8,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-</Project>
+</project>

@@ -7,7 +7,6 @@ namespace итоговое_7.сlass
         public BuyerStatus Status { get; set; }
 
         public string HomeAddress { get; set; }
-
-        pub
+        
     }
 }
