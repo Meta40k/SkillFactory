@@ -1,2 +1,19 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿internal class Program
+{
+    private static void Main(string[] args)
+    {
+    }
+
+public class Car<T>
+    {
+        public T Engine;
+    }
+public class GasEngine
+    {
+
+    }
+public class ElectricEngine 
+    {
+
+    }
+}
