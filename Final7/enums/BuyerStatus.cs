@@ -1,4 +1,4 @@
-﻿namespace итоговое_7.enums
+﻿namespace Final7.Class
 {
     enum BuyerStatus
     {

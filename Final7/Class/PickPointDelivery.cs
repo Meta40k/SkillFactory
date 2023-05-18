@@ -1,4 +1,4 @@
-﻿namespace итоговое_7.сlass
+﻿namespace Final7.Class
 {
     class PickPointDelivery : Delivery
     {
