@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Final7", "Final7\Final7.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "q8.2", "q8.2\q8.2.csproj", "{AD67EA83-0FFB-4555-9199-D5395A1DC26A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "q8", "q8", "{D2217D53-0D5F-47CA-BED8-A946EA617D22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "q8.2.1", "q8.2.1\q8.2.1.csproj", "{77F1C9E9-5D92-4680-BBED-783C0933F5C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,11 +37,19 @@ Global
 		{AD67EA83-0FFB-4555-9199-D5395A1DC26A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD67EA83-0FFB-4555-9199-D5395A1DC26A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD67EA83-0FFB-4555-9199-D5395A1DC26A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77F1C9E9-5D92-4680-BBED-783C0933F5C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77F1C9E9-5D92-4680-BBED-783C0933F5C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77F1C9E9-5D92-4680-BBED-783C0933F5C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77F1C9E9-5D92-4680-BBED-783C0933F5C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E63BC568-5CAD-414B-9D1E-0733D546C46C}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AD67EA83-0FFB-4555-9199-D5395A1DC26A} = {D2217D53-0D5F-47CA-BED8-A946EA617D22}
+		{77F1C9E9-5D92-4680-BBED-783C0933F5C8} = {D2217D53-0D5F-47CA-BED8-A946EA617D22}
 	EndGlobalSection
 EndGlobal
