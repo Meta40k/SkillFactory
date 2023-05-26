@@ -4,7 +4,8 @@
     {
         static void Main(string[] args)
         {
-            GetCatalogs(); //   Вызов метода получения директорий
+           // GetCatalogs(); //   Вызов метода получения директорий
+           NumberOfFiles();
         }
       
         static void GetCatalogs()
@@ -24,6 +25,22 @@
               
                 foreach (string s in files)   // Выведем их все
                     Console.WriteLine(s);
+            }
+        }
+
+        static void NumberOfFiles()
+        {
+            try
+            {
+                DirectoryInfo dirInfo = new DirectoryInfo(@"/" /* Или С:\\ для Windows */ );
+                if (dirInfo.Exists)
+                {
+                    Console.WriteLine(dirInfo.GetDirectories().Length + dirInfo.GetFiles().Length);
+                }
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine( e.Message);
             }
         }
     }
