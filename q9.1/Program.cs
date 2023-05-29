@@ -4,14 +4,12 @@
 
     static void Main(string[] args) 
     {
-        SumDelegate sumDelegate = Sum;
-        int result = sumDelegate(1, 10, 50);
-        Console.WriteLine(result);
-        Console.ReadKey();
+        var dg = delegate(string name)
+        {
+            return "Привет @" + name + " и добро пожаловать на SkillFactory!";
+        };
+
+        Console.WriteLine(dg.Invoke("sasa"));
     }
 
-    static int Sum(int a, int b, int c) 
-    {
-        return a + b + c;
-    }
 }
