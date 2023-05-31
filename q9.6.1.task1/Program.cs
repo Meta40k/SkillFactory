@@ -2,6 +2,8 @@
 //Сделайте массив из пяти различных видов исключений, включая собственный тип исключения. Реализуйте конструкцию TryCatchFinally, в которой будет итерация на каждый тип исключения (блок finally по желанию).
 //В блоке catch выведите в консольном сообщении текст исключения.
 
+using System.Threading.Channels;
+
 namespace DelegatePractices
 {
     class Program
@@ -23,32 +25,10 @@ namespace DelegatePractices
             {
                 var uu = 5 / nolik;
             }
-
             catch (Exception ex)
             {
-                arr.Contains(ex);
+                Console.WriteLine(arr.Contains(ex));
             }
-            
-            // catch (DivideByZeroException e)
-            // {
-            //     Console.WriteLine("было деление на ноль");
-            // }
-            // catch (DirectoryNotFoundException e)
-            // {
-            //     Console.WriteLine("Недопустимая часть пути к каталогу.");
-            // }
-            // catch (ArgumentOutOfRangeException e)
-            // {
-            //     Console.WriteLine("Аргумент находится за пределами диапазона допустимых значений.");
-            // }
-            // catch (ArgumentException e)
-            // {
-            //     Console.WriteLine("Непустой аргумент, передаваемый в метод, является недопустимым.");
-            // }
-            // catch (MyException e)
-            // {
-            //     Console.WriteLine("вот моё исключение исключающее иные исключения.");
-            // }
             finally
             {
                 Console.WriteLine("Всё нормально, люди в курсе! ");
@@ -56,9 +36,7 @@ namespace DelegatePractices
         }
 
         public class MyException : Exception
-
         {
-
         }
 
 
