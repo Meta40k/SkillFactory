@@ -7,22 +7,15 @@ namespace DelegatePractices
         delegate void ShowMessageDelegate(string _message);
         static void Main(string[] args)
         {
-            var re = delegate(string name)
-            {
-                Console.WriteLine("Hello world!");
-            };
-            
-            //re.Invoke("1");
-            
-            ShowMessageDelegate showMessageDelegate = ShowMessage;
-            showMessageDelegate.Invoke("Hello World!");
-            Console.Read();
+            var arr = new Exception[5];
         }
 
-        static void ShowMessage(string _message)
+        public class MyClass : Exception
+
         {
-            Console.WriteLine(_message);
+
         }
-        
+
+
     }
 }
