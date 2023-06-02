@@ -4,7 +4,7 @@
     {
         static void Main(string[] agrs)
         {
-            Console.WriteLine("1");
+            Calc calc = new Calc();
         }
     }
     
