@@ -4,6 +4,5 @@ public interface ISum
 {
     public void Summ(int x, int y)
     {
-        throw new NotImplementedException();
     }
 }

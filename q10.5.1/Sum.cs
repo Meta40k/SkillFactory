@@ -4,6 +4,14 @@ public class Sum : ISum
 {
     public int Summ(int x, int y)
     {
-        return x + y;
+        try
+        {
+            return x + y;
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
+        }
     }
 }

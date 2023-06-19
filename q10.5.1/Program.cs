@@ -4,7 +4,8 @@
     {
         static void Main(string[] agrs)
         {
-            Console.WriteLine(1);
+            var s = new Sum();
+            Console.WriteLine(s.Summ(10, 50));
         }
     }
     
