@@ -2,16 +2,9 @@ namespace q10._5._1;
 
 public class Sum : ISum
 {
+    private ISum sum;
     public int Summ(int x, int y)
     {
-        try
-        {
-            return x + y;
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-            throw;
-        }
+        return x + y;
     }
 }

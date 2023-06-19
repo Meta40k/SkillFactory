@@ -4,9 +4,19 @@
     {
         static void Main(string[] agrs)
         {
-            var s = new Sum();
-            Console.WriteLine(s.Summ(10, 50));
+            Console.WriteLine("Введите два числа для суммирования");
+            try
+            {
+                int y = Int32.Parse(Console.ReadLine());
+                int x = Int32.Parse(Console.ReadLine());
+                var result = new Sum().Summ(y, x);
+                Console.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                Console.WriteLine("нужно корректно заполнить два числа");
+            }
         }
     }
-    
 }
