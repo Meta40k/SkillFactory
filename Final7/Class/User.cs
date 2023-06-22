@@ -1,12 +1,12 @@
 namespace Final7.Class;
 
-abstract class User
+abstract class User //абстрактный класс. Все типы пользователей наследуются от него.
 {
-    public readonly Guid ID;
-    public string Name { get; private set; }
+    public readonly Guid ID; // id пользователя доступен из любого места с правом только для чтения. Нельзя переписать ID пользователя
+    public string Name { get; private set; } //ограничение на уровне свойств. Я могу получить информацию о имени пользователя, но поменять смогу только из кода самого класса.
 
-    private int _age;
-    public int Age 
+    private int _age; // тут просто приватное поле возраста пользователя.
+    public int Age //При помощи свойств реализовывается проверка "старше 16 лет" 
     { 
         get 
         { 

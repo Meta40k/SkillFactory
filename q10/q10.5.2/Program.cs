@@ -19,6 +19,9 @@
                 Console.WriteLine(e);
                 Console.WriteLine("нужно корректно заполнить два числа");
             }
+
+            ILogger loge = new Logger();
+            Console.WriteLine(loge);
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Final7.Class
 {
-    abstract class Delivery
+    class Delivery //Доставка. Сущность описывающая дейстивия курьера. 
     {
         public string Address;
 
