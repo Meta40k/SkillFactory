@@ -1,15 +1,14 @@
 ﻿namespace Final7.Class
 {
-    class Order <TDelivery, TStruct> 
-        where TDelivery : Delivery
+    public class Order
     {
-        public TDelivery Delivery;
         public int Number;
         public string Description;
+        public string Address;
 
         public void DisplayAddress()
         {
-            Console.WriteLine(Delivery.Address);
+
         }
     }
 }

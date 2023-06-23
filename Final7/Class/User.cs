@@ -20,7 +20,7 @@ abstract class User //абстрактный класс. Все типы пол�
             } 
         } 
     }
-
+    
 
 
     protected void ChangeName(string newName)
