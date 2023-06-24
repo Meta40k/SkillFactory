@@ -10,12 +10,13 @@ internal class Program
         Courier Boba = new Courier();
         Bedolagi.Add(Biba);
         Bedolagi.Add(Boba);
-        System.String
         
         //Регистрируем двух пользователей
         Buyer Denis = new Buyer();
         
         //Все создаваемые ордеры, попадют в эту очередь
-        Outline outline = new Outline();
+        List<Order> outline = new List<Order>();
+        //Outline outline = new Outline();
+
     }
 }
