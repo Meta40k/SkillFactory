@@ -2,12 +2,11 @@
 
 namespace Final7.Class
 {
-    class Buyer : User //Класс Покупатель наследуется и получается всё то, что есть у User
+    public class Buyer : User //Класс Покупатель наследуется и получается всё то, что есть у User
     {       
         public BuyerStatus Status { get; set; } //Поле описывающее статус покупателя. Влияет на бонусы при оформлении заказа.
         public string HomeAddress { get; set; }
         public string PickPointAddress { get; set; }
-        private Order outline;
         
         //Конструктор
         public Buyer()
@@ -20,7 +19,7 @@ namespace Final7.Class
         {
             Order order = new Order();
             order.Address = HomeAddress;
-            Program.outline.Add(order);
+            Program.outline.Add(order); //засовываем новый заказ в очередь
         }
     }
 }

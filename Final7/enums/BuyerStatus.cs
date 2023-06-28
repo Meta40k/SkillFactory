@@ -1,6 +1,6 @@
 ﻿namespace Final7.enums;
 
-    enum BuyerStatus
+public enum BuyerStatus
     {
         Common,
         Advanced,

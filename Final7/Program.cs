@@ -15,7 +15,15 @@ internal class Program
         Bedolagi.Add(boba);
         
         //Регистрируем двух пользователей
-        Buyer Denis = new Buyer();
-        
+        Buyer Denis = new();
+        Buyer Vova = new();
+
+        Console.WriteLine(outline.Count);
+        Denis.MakeOrder();
+        Console.WriteLine(outline.Count);
+        Vova.MakeOrder();
+        Console.WriteLine(outline.Count);
+
+
     }
 }

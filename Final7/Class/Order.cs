@@ -2,10 +2,17 @@
 {
     public class Order
     {
-        public int Number;
+        public Guid Id;
         public string Description;
         public string Address;
+        public Buyer customer;
 
+        private List<Product> _products;
+
+        public Order()
+        {
+            Id = new Guid();
+        }
         public void DisplayAddress()
         {
 
