@@ -15,13 +15,12 @@ namespace Final7.Class
             Status = BuyerStatus.Common;
         }
         
-        //У пользователя есть функция "Сделать заказ"
-        Order MakeOrder()
+        //У пользователя есть функция "Сделать заказ" 
+        public void MakeOrder()
         {
             Order order = new Order();
             order.Address = HomeAddress;
-            outline.Add(outline);
-            return order;
+            Program.outline.Add(order);
         }
     }
 }
