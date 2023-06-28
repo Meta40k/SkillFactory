@@ -9,9 +9,10 @@ namespace Final7.Class
         public string PickPointAddress { get; set; }
         
         //Конструктор
-        public Buyer()
+        public Buyer(string name)
         {
             Status = BuyerStatus.Common;
+            Name = name;
         }
         
         //У пользователя есть функция "Сделать заказ" 
@@ -21,6 +22,20 @@ namespace Final7.Class
             order.Address = HomeAddress;
             order.customer = this;
             Program.outline.Add(order); //засовываем новый заказ в очередь
+        }
+
+        public void RaiseStatus()
+        {
+            if (this.Status == BuyerStatus.Common)
+            {
+                this.Status = BuyerStatus.Advanced;
+            }
+            
+            if (this.Status == BuyerStatus.Advanced)
+            {
+                this.Status = BuyerStatus.VIP;
+            }
+            
         }
     }
 }
