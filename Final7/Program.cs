@@ -17,13 +17,9 @@ internal class Program
         //Регистрируем двух пользователей
         Buyer Denis = new();
         Buyer Vova = new();
-
-        Console.WriteLine(outline.Count);
+        
         Denis.MakeOrder();
-        Console.WriteLine(outline.Count);
-        Vova.MakeOrder();
-        Console.WriteLine(outline.Count);
-
+        Console.WriteLine(Program.outline.LastOrDefault().customer.Name);
 
     }
 }

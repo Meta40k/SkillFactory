@@ -19,6 +19,7 @@ namespace Final7.Class
         {
             Order order = new Order();
             order.Address = HomeAddress;
+            order.customer = this;
             Program.outline.Add(order); //засовываем новый заказ в очередь
         }
     }

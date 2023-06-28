@@ -5,7 +5,7 @@
         public Guid Id;
         public string Description;
         public string Address;
-        public Buyer customer;
+        public User customer;
 
         private List<Product> _products;
 
