@@ -20,6 +20,5 @@ class Courier : User
         Console.WriteLine("");
         Console.WriteLine($"еду по адресу {currentOrder.Address}");
         Console.WriteLine($"Доставить для {currentOrder.customer.Name}");
-        currentOrder.customer.RaiseStatus();
     }
 }
