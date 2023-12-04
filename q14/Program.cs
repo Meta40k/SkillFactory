@@ -2,37 +2,32 @@
 {
     public static void Main(string[] args)
     {
-        // Задание 4.  Есть массив строк:
-        string[] people = { "Анна", "Мария", "Сергей", "Алексей", "Дмитрий", "Ян" };
-        // Выбрать имена на букву А:
-        foreach (var man in people.Where(name => name.StartsWith("А")))
+        // Список студентов
+        var students = new List<Student>
         {
-            Console.WriteLine(man);
-        }
-
-
-        //Задание 8.  Дан список объектов:
-        var objects = new List<object>()
-        {
-            1,
-            "Сергей ",
-            "Андрей ",
-            300,
+            new Student { Name = "Андрей", Age = 23, Languages = new List<string> { "английский", "немецкий" } },
+            new Student { Name = "Сергей", Age = 27, Languages = new List<string> { "английский", "французский" } },
+            new Student { Name = "Дмитрий", Age = 29, Languages = new List<string> { "английский", "испанский" } }
         };
-        //1. Используйте выражения LINQ, чтобы достать оттуда все имена и вывести их в консоль в алфавитном порядке.
-        // objects.Where(object => objects is string);
-        var selected = from obj in objects 
-            where obj is string 
-            orderby obj 
-            select obj;
-        foreach (var f in selected)
+
+// Список курсов
+        var coarses = new List<Coarse>
         {
-            Console.WriteLine(f);
-        }
-        
-        //2. Перепишите программу из задания выше, используя методы-расширения так,
-        //чтобы вывод на консоль и сортировка происходили в две строчки.
-        foreach (var name in objects.Where(obj => obj is string).OrderBy(name => name))
-            Console.WriteLine(name);
+            new Coarse { Name = "Язык программирования C#", StartDate = new DateTime(2020, 12, 20) },
+            new Coarse { Name = "Язык SQL и реляционные базы данных", StartDate = new DateTime(2020, 12, 15) },
+        };
+    }
+
+    internal class Student
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+        public List<string> Languages { get; set; }
+    }
+
+    internal class Coarse
+    {
+        public string Name { get; set; }
+        public DateTime StartDate { get; set; }
     }
 }
