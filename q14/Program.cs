@@ -1,38 +1,67 @@
-﻿internal class Program
+﻿namespace PhoneBook
 {
-    public static void Main(string[] args)
+    class Program
     {
-        // Задание 4.  Есть массив строк:
-        string[] people = { "Анна", "Мария", "Сергей", "Алексей", "Дмитрий", "Ян" };
-        // Выбрать имена на букву А:
-        foreach (var man in people.Where(name => name.StartsWith("А")))
+        static void Main(string[] args)
         {
-            Console.WriteLine(man);
+            //  создаём пустой список с типом данных Contact
+            var phoneBook = new List<Contact>();
+     
+            // добавляем контакты
+            phoneBook.Add(new Contact("Игорь", "Николаев", 79990000001, "igor@example.com"));
+            phoneBook.Add(new Contact("Сергей", "Довлатов",79990000010, "serge@example.com"));
+            phoneBook.Add(new Contact("Анатолий", "Карпов", 79990000011, "anatoly@example.com"));
+            phoneBook.Add(new Contact("Валерий", "Леонтьев",79990000012, "valera@example.com"));
+            phoneBook.Add(new Contact("Сергей", "Брин",  799900000013, "serg@example.com"));
+            phoneBook.Add(new Contact("Иннокентий", "Смоктуновский",799900000013, "innokentii@example.com"));
+            
+            while (true)
+            {
+                // Читаем введенный с консоли символ
+                var input = Console.ReadKey().KeyChar;
+  
+                // проверяем, число ли это
+                var parsed = Int32.TryParse(input.ToString(), out int pageNumber);
+  
+                // если не соответствует критериям - показываем ошибку
+                if (!parsed || pageNumber < 1 || pageNumber > 3)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("Страницы не существует");
+                }
+                // если соответствует - запускаем вывод
+                else
+                {
+                    // пропускаем нужное количество элементов и берем 2 для показа на странице
+                    var pageContent = phoneBook.Skip((pageNumber - 1) * 2).Take(2)
+                        .OrderBy(name => name.Name)
+                        .ThenBy(lastname => lastname.LastName);
+                    Console.WriteLine();
+      
+                    // выводим результат
+                    foreach (var entry in pageContent)
+                        Console.WriteLine(entry.Name + " " + entry.LastName +  ": " + entry.PhoneNumber);
+ 
+                    Console.WriteLine();
+                }
+            }
         }
-
-
-        //Задание 8.  Дан список объектов:
-        var objects = new List<object>()
+    }
+    public class Contact // модель класса
+    {
+        public Contact(string name, string lastName, long phoneNumber, String email) // метод-конструктор
         {
-            1,
-            "Сергей ",
-            "Андрей ",
-            300,
-        };
-        //1. Используйте выражения LINQ, чтобы достать оттуда все имена и вывести их в консоль в алфавитном порядке.
-        // objects.Where(object => objects is string);
-        var selected = from obj in objects 
-            where obj is string 
-            orderby obj 
-            select obj;
-        foreach (var f in selected)
-        {
-            Console.WriteLine(f);
+            Name = name;
+            LastName = lastName;
+            PhoneNumber = phoneNumber;
+            Email = email;
         }
+  
+        public String Name {get;}
+        public String LastName {get;}
+        public long PhoneNumber {get;}
+        public String Email {get;}
         
-        //2. Перепишите программу из задания выше, используя методы-расширения так,
-        //чтобы вывод на консоль и сортировка происходили в две строчки.
-        foreach (var name in objects.Where(obj => obj is string).OrderBy(name => name))
-            Console.WriteLine(name);
+        
     }
 }
