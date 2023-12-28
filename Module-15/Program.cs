@@ -13,12 +13,16 @@ internal class Program
             new Classroom { Students = { "Bulat", "Alex", "Galina" }, }
         };
         var allStudents = GetAllStudents(classes);
+        var allStudents2 = GetAllStudents(classes);
 
         Console.WriteLine(string.Join(" ", allStudents));
     }
-
+    
     static string[] GetAllStudents(Classroom[] classes)
     {
-        classes.Select()
+        var result = classes.Select(clsr => clsr.Students)
+            .SelectMany(namelist => namelist.Select(name => name))
+            .ToArray();
+        return result;
     }
 }
