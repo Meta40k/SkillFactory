@@ -5,7 +5,7 @@ VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Module-15", "Module-15\Module-15.csproj", "{69F77DB3-BD44-4F17-B8FC-6E34281EC00E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "7.2.7", "7.2.7\7.2.7.csproj", "{0EDDC0CA-B191-4321-8CC3-3415AF3EBB18}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module-9", "Module-9\Module-9.csproj", "{0EDDC0CA-B191-4321-8CC3-3415AF3EBB18}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Final7", "Final7\Final7.csproj", "{F6AF4256-3212-4D8A-B1DE-4F46ED32CFFE}"
 EndProject
